@@ -26,9 +26,20 @@ def func2(id):
     return str(id)
 
 
-@app.route('/rianna')
+@app.route('/image_mars')
 def rianna():
-    return f'<img src="{url_for("static", filename="rianna.jpeg")}">'
+    return f"""<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <title>Привет, Марс!</title>
+                  </head>
+                  <body>
+                    <h1>Жди нас, Марс))</h1>
+                    <img src="{url_for("static", filename="mars.jpg")}">
+                    </br>Вот она какая, красная планета)
+                  </body>
+                </html>"""
 
 
 app.run(host='localhost', port=8080, debug=True)
