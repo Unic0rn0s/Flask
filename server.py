@@ -27,7 +27,7 @@ def func2(id):
 
 
 @app.route('/image_mars')
-def rianna():
+def image_mars():
     return f"""<!doctype html>
                 <html lang="en">
                   <head>
@@ -36,8 +36,29 @@ def rianna():
                   </head>
                   <body>
                     <h1>Жди нас, Марс))</h1>
-                    <img src="{url_for("static", filename="mars.jpg")}">
+                    <img src="{url_for("static", filename="img/mars.jpg")}">
                     </br>Вот она какая, красная планета)
+                  </body>
+                </html>"""
+
+
+@app.route('/promotion_image')
+def promotion_image():
+    txt = '</br>'.join(['Человечество вырастает из детства.', 'Человечеству мала одна планета.',
+                        'Мы сделаем обитаемыми безжизненные пока планеты.', 'И начнем с Марса!',
+                        'Присоединяйся!'])
+    return f"""<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <link rel="stylesheet" type="text/css" 
+                    href="{url_for('static', filename='css/style.css')}" />
+                    <title>Привет, Марс!</title>
+                  </head>
+                  <body>
+                    <h1>Жди нас, Марс))</h1>
+                    <img src="{url_for("static", filename="img/mars.jpg")}">
+                    <div>{txt}</div>
                   </body>
                 </html>"""
 
