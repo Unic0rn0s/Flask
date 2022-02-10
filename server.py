@@ -108,7 +108,7 @@ def form_sample():
                                         <input type="checkbox" class="form-check-input" name="accept">
                                         <label class="form-check-label">Фронтендер)</label><br />
                                         <input type="checkbox" class="form-check-input" name="accept">
-                                        <label class="form-check-label">Преисполненый в познании</label><br />
+                                        <label class="form-check-label">Преисполненный в познании</label><br />
                                     </div>
                                     <br />
                                     <div class="form-group">
