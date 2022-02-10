@@ -77,29 +77,40 @@ def form_sample():
                             <title>Пример формы</title>
                           </head>
                           <body>
-                            <h1>Форма для регистрации в суперсекретной системе</h1>
+                            <h1 class="form_name">Анкета претендента на участие в миссии</h1>
                             <div>
                                 <form class="login_form" method="post">
+                                    <input type="text" class="form-control" id="name" placeholder="Имя" name="name">
+                                    <input type="text" class="form-control" id="surname" placeholder="Фамилия" name="surname">
+                                    <br />
                                     <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Введите адрес почты" name="email">
-                                    <input type="password" class="form-control" id="password" placeholder="Введите пароль" name="password">
+                                    <br />
                                     <div class="form-group">
-                                        <label for="classSelect">В каком вы классе</label>
+                                        <label for="classSelect">Образование</label>
                                         <select class="form-control" id="classSelect" name="class">
-                                          <option>7</option>
-                                          <option>8</option>
-                                          <option>9</option>
-                                          <option>10</option>
-                                          <option>11</option>
+                                          <option>Такое себе</option>
+                                          <option>Норм</option>
+                                          <option>Выше норм</option>
+                                          <option>Супер норм</option>
+                                          <option>Мега гипер ультра норм</option>
                                         </select>
                                      </div>
-                                    <div class="form-group">
-                                        <label for="about">Немного о себе</label>
-                                        <textarea class="form-control" id="about" rows="3" name="about"></textarea>
+                                    <br />
+                                    <div class="form-group form-check">
+                                        <label for="form-check">Ваши профессии</label>
+                                        <br />
+                                        <input type="checkbox" class="form-check-input" name="accept">
+                                        <label class="form-check-label">Мемодел</label><br />
+                                        <input type="checkbox" class="form-check-input" name="accept">
+                                        <label class="form-check-label">Амогус</label><br />
+                                        <input type="checkbox" class="form-check-input" name="accept">
+                                        <label class="form-check-label">Бэкендер)</label><br />
+                                        <input type="checkbox" class="form-check-input" name="accept">
+                                        <label class="form-check-label">Фронтендер)</label><br />
+                                        <input type="checkbox" class="form-check-input" name="accept">
+                                        <label class="form-check-label">Преисполненый в познании</label><br />
                                     </div>
-                                    <div class="form-group">
-                                        <label for="photo">Приложите фотографию</label>
-                                        <input type="file" class="form-control-file" id="photo" name="file">
-                                    </div>
+                                    <br />
                                     <div class="form-group">
                                         <label for="form-check">Укажите пол</label>
                                         <div class="form-check">
@@ -115,10 +126,22 @@ def form_sample():
                                           </label>
                                         </div>
                                     </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <label for="about">Оно Вам надо?</label>
+                                        <textarea class="form-control" id="about" rows="3" name="about"></textarea>
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <label for="photo">Приложите фотографию</label>
+                                        <input type="file" class="form-control-file" id="photo" name="file">
+                                    </div>
+                                    <br />
                                     <div class="form-group form-check">
                                         <input type="checkbox" class="form-check-input" id="acceptRules" name="accept">
-                                        <label class="form-check-label" for="acceptRules">Готов быть добровольцем</label>
+                                        <label class="form-check-label" for="acceptRules">Готовы остаться на Марсе?</label>
                                     </div>
+                                    <br />
                                     <button type="submit" class="btn btn-primary">Записаться</button>
                                 </form>
                             </div>
