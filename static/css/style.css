@@ -16,3 +16,28 @@ form.login_form {
     border-radius: 5px;
     padding: 10px;
 }
+
+.form_name {
+    color: black;
+    text-align: center;
+}
+
+#a {
+    color: #7f8f18;
+}
+
+#b {
+    color: #6b8e23;
+}
+
+#c {
+    color: #507d2a;
+}
+
+#d {
+    color: #478430;
+}
+
+#e {
+    color: #4c9141;
+}

@@ -158,4 +158,23 @@ def form_sample():
         return "Форма отправлена"
 
 
+@app.route('/choice/<planet_name>')
+def choice(planet_name):
+    return f"""<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <title>Выбор сделан</title>
+                    <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
+                  </head>
+                  <body>
+                    <h1 id="a">Моё предложение: {planet_name}</h1>
+                    <h4 id="b">Эта планета далеко от Земли</h4>
+                    <h3 id="c">На ней нет воды и атмосферы</h3>
+                    <h2 id="d">У неё сильное магнитное поле</h2>
+                    <h1 id="e">Планета мечты!)</h1>
+                  </body>
+                </html>"""
+
+
 app.run(host='localhost', port=8080, debug=True)
