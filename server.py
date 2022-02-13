@@ -1,4 +1,6 @@
 from flask import Flask, url_for, request
+import os
+import shutil
 
 app = Flask('Sus')
 
@@ -283,6 +285,52 @@ def carousel():
                     crossorigin="anonymous"></script>
                 </body>
                 </html>"""
+
+
+@app.route('/load_img', methods=['POST', 'GET'])
+def load_img():
+    if request.method == 'GET':
+        return """<!doctype html>
+                    <html lang="en">
+                      <head>
+                        <meta charset="utf-8">
+                        <title>Загрузка изображения</title>
+                      </head>
+                      <body>
+                        <div class="container">
+                            <div class="row">
+                                <label>Загрузить файл:</label>
+                                <input type="file" id="file" name="file" />
+                            </div>
+                            <div class="row">
+                                <span id="output"></span>
+                            </div>
+                        </div>
+                        <script>
+                            function handleFileSelect(evt) {
+                                var file = evt.target.files; // FileList object
+                                var f = file[0];
+                                // Only process image files.
+                                if (!f.type.match('image.*')) {
+                                    alert("Image only please....");
+                                }
+                                var reader = new FileReader();
+                                // Closure to capture the file information.
+                                reader.onload = (function(theFile) {
+                                    return function(e) {
+                                        // Render thumbnail.
+                                        var span = document.createElement('span');
+                                        span.innerHTML = ['<img class="thumb" title="', escape(theFile.name), '" src="', e.target.result, '" />'].join('');
+                                        document.getElementById('output').insertBefore(span, null);
+                                    };
+                                })(f);
+                                // Read in the image file as a data URL.
+                                reader.readAsDataURL(f);
+                            }
+                            document.getElementById('file').addEventListener('change', handleFileSelect, false);
+                            </script>
+                      </body>
+                    </html>"""
 
 
 app.run(host='localhost', port=8080, debug=True)
